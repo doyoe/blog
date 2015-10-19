@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <title>margin系列之keyword auto | CSS探索之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="margin的重要性：有个不容置疑的事，前端开发人员没有人能够忽视CSS margin的重要性。CSS coding时，margin的使用频率就如同呼吸般频繁，如果我可以说得夸张点的话。
+margin作为CSS盒模型基本组成要素之一，是非常Basis的一个技术手段，所以我想对于它的一些基本情况应该不用太介绍了？
+margin经常被用来做什么？
+让块元素水平居中；
+让元素之间留有舒适的留白；
+处理特">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之keyword auto">
+<meta property="og:url" content="http://blog.doyoe.com/2013/11/29/css/margin系列之keyword auto/index.html">
+<meta property="og:site_name" content="CSS探索之旅">
+<meta property="og:description" content="margin的重要性：有个不容置疑的事，前端开发人员没有人能够忽视CSS margin的重要性。CSS coding时，margin的使用频率就如同呼吸般频繁，如果我可以说得夸张点的话。
+margin作为CSS盒模型基本组成要素之一，是非常Basis的一个技术手段，所以我想对于它的一些基本情况应该不用太介绍了？
+margin经常被用来做什么？
+让块元素水平居中；
+让元素之间留有舒适的留白；
+处理特">
+<meta property="og:image" content="http://blog.doyoe.com//demo.doyoe.com/css/margin/images/margin.png">
+<meta property="og:updated_time" content="2015-04-20T11:47:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="margin系列之keyword auto">
+<meta name="twitter:description" content="margin的重要性：有个不容置疑的事，前端开发人员没有人能够忽视CSS margin的重要性。CSS coding时，margin的使用频率就如同呼吸般频繁，如果我可以说得夸张点的话。
+margin作为CSS盒模型基本组成要素之一，是非常Basis的一个技术手段，所以我想对于它的一些基本情况应该不用太介绍了？
+margin经常被用来做什么？
+让块元素水平居中；
+让元素之间留有舒适的留白；
+处理特">
+  
+    <link rel="alternative" href="/atom.xml" title="CSS探索之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <!--<div class="overlay"></div>-->
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/mobile/">移动开发</a></li>
+				        
+							<li><a href="/categories/CSS/">CSS</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/FE/" style="font-size: 10px;">FE</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Qunar/" style="font-size: 10px;">Qunar</a> <a href="/tags/margin/" style="font-size: 17.5px;">margin</a> <a href="/tags/margin-bug/" style="font-size: 15px;">margin bug</a> <a href="/tags/margin-layout/" style="font-size: 10px;">margin layout</a> <a href="/tags/margin偏移/" style="font-size: 10px;">margin偏移</a> <a href="/tags/margin应用/" style="font-size: 12.5px;">margin应用</a> <a href="/tags/margin折叠/" style="font-size: 10px;">margin折叠</a> <a href="/tags/margin百分比/" style="font-size: 10px;">margin百分比</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/w3c/" style="font-size: 20px;">w3c</a> <a href="/tags/z-index/" style="font-size: 10px;">z-index</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/包含块/" style="font-size: 10px;">包含块</a> <a href="/tags/博客介绍/" style="font-size: 10px;">博客介绍</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/层叠上下文/" style="font-size: 10px;">层叠上下文</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/置换元素/" style="font-size: 10px;">置换元素</a> <a href="/tags/自我介绍/" style="font-size: 10px;">自我介绍</a> <a href="/tags/视觉格式化模型/" style="font-size: 12.5px;">视觉格式化模型</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非置换元素/" style="font-size: 10px;">非置换元素</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://css.doyoe.com/">CSS参考手册</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://demo.doyoe.com/">Web前端实验室</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我在帝都，在Qunar，你可以在 Github 或者 Weibo 找到我。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/mobile/">移动开发</a></li>
+		        
+					<li><a href="/categories/CSS/">CSS</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-css/margin系列之keyword auto" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/11/29/css/margin系列之keyword auto/" class="article-date">
+  	<time datetime="2013-11-29T03:15:00.000Z" itemprop="datePublished">Nov 29 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin/">margin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3c/">w3c</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      margin系列之keyword auto
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="margin的重要性：">margin的重要性：</h2><p>有个不容置疑的事，前端开发人员没有人能够忽视CSS <code>margin</code>的重要性。CSS coding时，margin的使用频率就如同呼吸般频繁，如果我可以说得夸张点的话。</p>
+<p>margin作为CSS盒模型基本组成要素之一，是非常Basis的一个技术手段，所以我想对于它的一些基本情况应该不用太介绍了？</p>
+<h2 id="margin经常被用来做什么？">margin经常被用来做什么？</h2><ul>
+<li>让块元素水平居中；</li>
+<li>让元素之间留有舒适的留白；</li>
+<li>处理特殊的first或last，大家懂的？</li>
+<li>一些布局；</li>
+</ul>
+<h2 id="需要注意的地方：">需要注意的地方：</h2><ul>
+<li>margin折叠；</li>
+<li>margin的百分比值；</li>
+<li>margin的auto值；</li>
+<li>margin和相对偏移top, right, bottom, left的异同；</li>
+<li>IE6浮动双margin Bug；</li>
+<li>IE6浮动相邻元素3px Bug；</li>
+</ul>
+<p>看起来似乎有不少的知识点？恩，这些都是我们需要了解的，包括一些没有被列举出来的点。</p>
+<p>今天要讲的其实只是其中很少的一部分，恩，标题里有：keyword auto</p>
+<a id="more"></a>
+<h2 id="keyword_auto">keyword auto</h2><p>auto是margin的可选值之一。相信大家平时使用auto值时，最多的用法大概是 <code>margin: 0 auto;</code> 和 <code>margin: auto;</code>，恩，是的，块元素水平居中。让我们来看看代码实现：</p>
+<h3 id="CSS:">CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#demo</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">margin</span>:<span class="value"> auto</span></span>; <span class="comment">/* 或者 margin: 0 auto; */</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="HTML:">HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>恩，我就是那个需要水平居中的家伙。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了更明显点，我们来看个例子：<a href="//demo.doyoe.com/css/margin/horizontal-center.htm">margin实现块元素水平居中</a>。Cool，这么简单就实现了水平居中。</p>
+<p>不过你可能也发现了不论是 <code>margin: auto;</code> 还是 <code>margin: 0 auto;</code> 效果都是一样的，都是让 #demo 水平居中了，但纵向并没有任何变化。</p>
+<p>大家都知道 <code>margin</code> 是复合属性，也就是说 <code>margin: auto;</code> 其实相当于 <code>margin: auto auto auto auto;</code>，<code>margin: 0 auto;</code>相当于 <code>margin: 0 auto 0 auto;</code>，四个值分别对应上右下左。至于CSS中的上、右、下、左顺序就不做赘述了。</p>
+<p>根据规范，<code>margin-top: auto;</code> 和 <code>margin-bottom: auto;</code>，其计算值为0。这也就解释了为什么 <code>margin: auto;</code> 等同于 <code>margin: 0 auto;</code>。但仅此而已吗？让我们来看看规范描述：</p>
+<blockquote>
+<p>原文：On the A edge and C edge, the used value of ‘auto’ is 0.</p>
+<p>翻译：如果场景是A和C，那么其 <code>auto</code> 计算值为 <code>0</code>。</p>
+<p><img src="//demo.doyoe.com/css/margin/images/margin.png" alt="margin edge"></p>
+<p>更详细请参阅：<a href="//dev.w3.org/csswg/css-box/#the-margin-properties">margin properties</a></p>
+</blockquote>
+<p>由此可见，它们还与书写模式 <code>writing-mode</code> 和 文档流方向 <code>direction</code> 有关。所以我们说 <code>margin: auto;</code> 等同于 <code>margin: 0 auto;</code> 是不太精准的，因为还有前置条件。</p>
+<p>了解这些很重要，这有助于理解 <code>margin</code> 属性的设计意图。</p>
+<p>OK，聊了这么多，我们回到默认的 <code>writing-mode: horizontal-tb;</code> 和 <code>direction: ltr;</code> 的情况继续往下，后面的话题都基于这个前提。</p>
+<h2 id="为什么auto能实现水平居中？">为什么auto能实现水平居中？</h2><p>这是因为水平方向的 <code>auto</code>，其计算值取决于可用空间（剩余空间）。</p>
+<blockquote>
+<p>原文：On the B edge and D edge, the used value depends on the available space.</p>
+<p>翻译：如果场景是B和D，那么其 <code>auto</code> 计算值取决于可用空间。</p>
+</blockquote>
+<p>想象这样一个场景，一个宽100px的p被包含在一个宽500px的div内，此时设置 p 的 margin-left 值为 auto，大家觉得结果会怎样？</p>
+<h3 id="CSS:-1">CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#demo</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#demo</span> <span class="tag">p</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> auto</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="HTML:-1">HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>恩，我就是那个p。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>结果你猜到了吗？没猜到也不怕，用事实说话：<a href="//demo.doyoe.com/css/margin/margin-left-auto.htm">margin-left关键字auto结果猜想</a>。</p>
+<p>好了，结果得到了，p相对于包含块右对齐了，这与规范描述一致。<code>margin-left:auto;</code> 自动占据了包含块的可用空间，即 500 - 100px = 400px。也就是说auto最后的计算值为400px，即 <code>margin-left:400px;</code>。所以 <code>margin-right:auto;</code> 的结果会相当于左对齐。</p>
+<p>到这里，相信大家都知道为什么 <code>margin: auto;</code> 和 <code>margin: 0 auto;</code> 能实现水平居中了。因为左右方向的auto值均分了可用空间，使得块元素得以在包含块内居中显示。</p>
+<p>至于垂直方向上为什么无法居中，还有更深层的原因吗？大家可以思考一下。</p>
+<h2 id="可参考：">可参考：</h2><ul>
+<li><a href="http://www.w3.org/TR/css3-box/#margins" target="_blank" rel="external">http://www.w3.org/TR/css3-box/#margins</a></li>
+<li><a href="http://dev.w3.org/csswg/css-box/#the-margin-properties" target="_blank" rel="external">http://dev.w3.org/csswg/css-box/#the-margin-properties</a></li>
+<li><a href="http://dev.w3.org/csswg/css-box/#Calculating" target="_blank" rel="external">http://dev.w3.org/csswg/css-box/#Calculating</a></li>
+</ul>
+<h2 id="margin系列文章：">margin系列文章：</h2><ul>
+<li><a href="/2013/12/31/css/margin系列之布局篇/">margin系列之布局篇</a></li>
+<li><a href="/2013/12/20/css/margin系列之bug巡演（三）/">margin系列之bug巡演（三）</a></li>
+<li><a href="/2013/12/17/css/margin系列之bug巡演（二）/">margin系列之bug巡演（二）</a></li>
+<li><a href="/2013/12/14/css/margin系列之内秀篇（二）/">margin系列之内秀篇（二）</a></li>
+<li><a href="/2013/12/10/css/margin系列之bug巡演/">margin系列之bug巡演</a></li>
+<li><a href="/2013/12/06/css/margin系列之内秀篇/">margin系列之内秀篇</a></li>
+<li><a href="/2013/12/04/css/margin系列之外边距折叠/">margin系列之外边距折叠</a></li>
+<li><a href="/2013/12/02/css/margin系列之与相对偏移的异同/">margin系列之与相对偏移的异同</a></li>
+<li><a href="/2013/11/30/css/margin系列之百分比/">margin系列之百分比</a></li>
+<li><a href="/2013/11/29/css/margin系列之keyword%20auto/">margin系列之keyword auto</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/30/job/join-us/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          去哪儿网招聘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/28/life/一年又要过去了/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一年又要过去了</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css/margin系列之keyword auto" data-title="margin系列之keyword auto" data-url="http://blog.doyoe.com/2013/11/29/css/margin系列之keyword auto/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"doyoe"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+        &copy; Joy Du（<a href="http://weibo.com/doyoe" target="_blank">@doyoe</a>）
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <title>margin系列之内秀篇（二） | CSS探索之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="可挖掘性之前已经写过一篇关于 margin 应用场景的文章：margin系列之内秀篇，当然，它的应用场景会远大于文中所述，无法一一列举。
+所以本篇权当是对此的补遗好了，各位客官如有比较Cool的想法都可以留言给我，我会视情况补丁进来。
+1像素圆角">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之内秀篇（二）">
+<meta property="og:url" content="http://blog.doyoe.com/2013/12/14/css/margin系列之内秀篇（二）/index.html">
+<meta property="og:site_name" content="CSS探索之旅">
+<meta property="og:description" content="可挖掘性之前已经写过一篇关于 margin 应用场景的文章：margin系列之内秀篇，当然，它的应用场景会远大于文中所述，无法一一列举。
+所以本篇权当是对此的补遗好了，各位客官如有比较Cool的想法都可以留言给我，我会视情况补丁进来。
+1像素圆角">
+<meta property="og:image" content="http://demo.doyoe.com/css/margin/images/radius.png">
+<meta property="og:image" content="http://demo.doyoe.com/css/margin/images/tab.png">
+<meta property="og:image" content="http://demo.doyoe.com/css/margin/images/double-lines.png">
+<meta property="og:updated_time" content="2015-04-20T13:30:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="margin系列之内秀篇（二）">
+<meta name="twitter:description" content="可挖掘性之前已经写过一篇关于 margin 应用场景的文章：margin系列之内秀篇，当然，它的应用场景会远大于文中所述，无法一一列举。
+所以本篇权当是对此的补遗好了，各位客官如有比较Cool的想法都可以留言给我，我会视情况补丁进来。
+1像素圆角">
+  
+    <link rel="alternative" href="/atom.xml" title="CSS探索之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <!--<div class="overlay"></div>-->
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/mobile/">移动开发</a></li>
+				        
+							<li><a href="/categories/CSS/">CSS</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/FE/" style="font-size: 10px;">FE</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Qunar/" style="font-size: 10px;">Qunar</a> <a href="/tags/margin/" style="font-size: 17.5px;">margin</a> <a href="/tags/margin-bug/" style="font-size: 15px;">margin bug</a> <a href="/tags/margin-layout/" style="font-size: 10px;">margin layout</a> <a href="/tags/margin偏移/" style="font-size: 10px;">margin偏移</a> <a href="/tags/margin应用/" style="font-size: 12.5px;">margin应用</a> <a href="/tags/margin折叠/" style="font-size: 10px;">margin折叠</a> <a href="/tags/margin百分比/" style="font-size: 10px;">margin百分比</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/w3c/" style="font-size: 20px;">w3c</a> <a href="/tags/z-index/" style="font-size: 10px;">z-index</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/包含块/" style="font-size: 10px;">包含块</a> <a href="/tags/博客介绍/" style="font-size: 10px;">博客介绍</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/层叠上下文/" style="font-size: 10px;">层叠上下文</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/置换元素/" style="font-size: 10px;">置换元素</a> <a href="/tags/自我介绍/" style="font-size: 10px;">自我介绍</a> <a href="/tags/视觉格式化模型/" style="font-size: 12.5px;">视觉格式化模型</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非置换元素/" style="font-size: 10px;">非置换元素</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://css.doyoe.com/">CSS参考手册</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://demo.doyoe.com/">Web前端实验室</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我在帝都，在Qunar，你可以在 Github 或者 Weibo 找到我。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/mobile/">移动开发</a></li>
+		        
+					<li><a href="/categories/CSS/">CSS</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-css/margin系列之内秀篇（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/12/14/css/margin系列之内秀篇（二）/" class="article-date">
+  	<time datetime="2013-12-14T03:15:00.000Z" itemprop="datePublished">Dec 14 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin/">margin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin应用/">margin应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3c/">w3c</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      margin系列之内秀篇（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="可挖掘性">可挖掘性</h2><p>之前已经写过一篇关于 <code>margin</code> 应用场景的文章：<a href="hhttp://blog.doyoe.com/~posts/css/2013-12-06-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E5%86%85%E7%A7%80%E7%AF%87.md">margin系列之内秀篇</a>，当然，它的应用场景会远大于文中所述，无法一一列举。</p>
+<p>所以本篇权当是对此的补遗好了，各位客官如有比较Cool的想法都可以留言给我，我会视情况补丁进来。</p>
+<h2 id="1像素圆角">1像素圆角</h2><a id="more"></a>
+<p>这有什么好聊的吗？<code>border-radius</code> 瞬间可将之秒杀。恩，有的时候你不得不承认CSS3真是一把大杀器。不过当年我们是怎么做的？（会暴露年龄么？）</p>
+<p>先看看我们要做什么,<code>图一</code>：</p>
+<p><img src="http://demo.doyoe.com/css/margin/images/radius.png" alt="1px圆角">（图一）</p>
+<p>如上图一，我们会这样写：</p>
+<h3 id="HTML">HTML</h3><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>1px圆角<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><h3 id="CSS">CSS</h3><pre><code><span class="id">#demo</span> <span class="tag">a</span>,<span class="id">#demo</span> <span class="tag">span</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value">inline-block</span></span>;
+    <span class="rule"><span class="attribute">vertical-align</span>:<span class="value">top</span></span>;
+}</span>
+<span class="id">#demo</span> <span class="tag">span</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">1px</span> -<span class="number">1px</span></span></span>; <span class="comment">/* 关键规则 */</span>
+}</span>
+</code></pre><p>一条CSS规则我们就可以实现1px圆角，你信吗？来看<code>DEMO1</code>：<a href="http://demo.doyoe.com/css/margin/radius.htm" target="_blank" rel="external">margin实现1px圆角</a></p>
+<p>看到<code>DEMO1</code>的结果后，你会发现我们确实做到了1px圆角，很简单，有木有？在没有 <code>border-radius</code> 的年代，我们也很欢乐。</p>
+<p>看到Code后，我想应该不用太解释为什么可以实现？</p>
+<p>BTW，多像素圆角也可以参考这种方式来实现，如果你实在不想用图片的话。</p>
+<h2 id="已知宽高元素水平垂直居中">已知宽高元素水平垂直居中</h2><p>必须说，这是一个非常典型的 <code>margin</code> 应用，虽然如今看起来貌似使用场景不是太大，但还是好多人喜欢在面试时对人问起，我偶尔也会，但不多。</p>
+<p>假设一个宽300px，高300px的盒子要在整个页面中水平垂直居中，我们可以这样做：</p>
+<h3 id="HTML-1">HTML</h3><pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"demo"</span>&gt;这是一个水平垂直居中的容器&lt;/<span class="keyword">div</span>&gt;
+</code></pre><h3 id="CSS-1">CSS</h3><pre><code><span class="id">#demo</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50%</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">300px</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">300px</span></span></span>;
+    <span class="rule"><span class="attribute">margin-top</span>:<span class="value">-<span class="number">150px</span></span></span>;
+    <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">150px</span></span></span>;
+}</span>
+</code></pre><p>恩，是的，借助绝对定位。我们先来看看 <code>DEMO2</code>：<a href="http://demo.doyoe.com/css/margin/alignment.htm" target="_blank" rel="external">margin实现已知宽高元素水平垂直居中</a></p>
+<p>先通过 <code>top/left</code> 将 <code>#demo</code> 的绝对定位流起始位置设置为当前屏的中心点，此时 <code>#demo</code> 的左上角这个点其实已经是相对于页面水平垂直居中了，由于它的宽度和高度都是300px，所以从起始位置向右下各延伸300px后才是整个 <code>#demo</code> 的真正位置。此时整个 <code>#demo</code> 其实并不是水平垂直居中的，除非我们将 <code>#demo</code> 的中心点放在当前屏的中心点上。怎么做？</p>
+<p>这时我们就需要使用 <code>margin</code> 了，在 <a href="http://blog.doyoe.com/~posts/css/2013-12-02-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%8E%E7%9B%B8%E5%AF%B9%E5%81%8F%E7%A7%BB%E7%9A%84%E5%BC%82%E5%90%8C.md">margin系列之与相对偏移的异同</a> 这篇文章里，我们就说过 <code>margin</code> 是以自身作为参照物进行位置偏移的。所以我们只需要将 <code>#demo</code> 相对自身向上偏移150px，向左偏移150px，就能够实现将自身的中心点放在当前屏的中心点上，也就实现了自身在当前屏的水平垂直居中。</p>
+<p>为什么代码里是 <code>-150px</code> ？好吧，如果用 <code>margin-top</code> 来实现向上偏移，必须是负值，不是么？如果是正值的话，就是向下偏移了，其实也相当于是 <code>margin-bottom</code> 的正值， <code>margin-left</code> 亦然，我们在 <a href="http://blog.doyoe.com/~posts/css/2013-12-02-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%8E%E7%9B%B8%E5%AF%B9%E5%81%8F%E7%A7%BB%E7%9A%84%E5%BC%82%E5%90%8C.md">margin系列之与相对偏移的异同</a> 文章最后同样说过这个。基础知识很重要，有木有？</p>
+<h2 id="tabstrip底边线重合">tabstrip底边线重合</h2><p>先上个需求，如 <code>图二</code>：</p>
+<p><img src="http://demo.doyoe.com/css/margin/images/tab.png" alt="tabstrip底边线重合">（图二）</p>
+<p>看到 <code>图二</code> ，我想大家可能知道可能知道要做什么了。</p>
+<p>对，我们要做的就是 tab 项与底边线重合，这应该是我们常见的场景了，<code>margin</code> 仍然是最佳选择。先来看代码：</p>
+<h3 id="HTML-2">HTML</h3><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span>分类一<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span> <span class="attribute">class</span>=<span class="value">"on"</span>&gt;</span>分类二<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span>分类三<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"?"</span>&gt;</span>分类四<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><h3 id="CSS-2">CSS</h3><pre><code><span class="id">#demo</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#aaa</span></span></span>;
+}</span>
+<span class="id">#demo</span> <span class="tag">a</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value">inline-block</span></span>;
+    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value">-<span class="number">1px</span></span></span>;
+    <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#aaa</span></span></span>;
+}</span>
+<span class="id">#demo</span> <span class="class">.on</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-bottom-color</span>:<span class="value"><span class="hexcolor">#fff</span></span></span>;
+}</span>
+</code></pre><p>要实现 <code>tab</code> 中各项与包含块的底边线重合，重点在于将包含块的底边线向上偏移1px，这样就与 <code>tab</code> 各项的底部重合在一起。</p>
+<p>怎样可以做到让包含块底边线向上偏移1px？恩，<code>margin</code> 是那么的顺其自然。我们只需要将 <code>tab</code> 各项的 <code>margin-bottom</code> 设置为 -1px 即可，其本身高度不变，但包含块底部会向上1px。</p>
+<p>来看看具体实现的例子 <code>DEMO3</code>：<a href="http://demo.doyoe.com/css/margin/tab.htm" target="_blank" rel="external">tabstrip底边线重合</a></p>
+<h2 id="双重边线">双重边线</h2><p>实际场景可能比这会稍复杂一些，我们看个大概即可，主要是拓宽一下思路，来看 <code>图三</code>：</p>
+<p><img src="http://demo.doyoe.com/css/margin/images/double-lines.png" alt="多重边线">（图三）</p>
+<p>从图三中，我们可以看到每行都会有一个双色的边线，这就是我们要做的，HTML代码大约是这样：</p>
+<h3 id="HTML-3">HTML</h3><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>这是一个双重边线的示例<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>这是一个双重边线的示例<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>这是一个双重边线的示例<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>这是一个双重边线的示例<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>怎么做？恩，我们可以用常规的方式来解决，比如完全使用 <code>border</code> ：</p>
+<h3 id="CSS_Case1">CSS Case1</h3><pre><code><span class="id">#demo</span> <span class="tag">li</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#fff</span></span></span>;
+    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;
+}</span>
+</code></pre><p>结果出来后，我们会发现最顶部多出了一条线，同时最底部又少了一条线。当然，这都可以被解决，我们可以让 <code>ul</code> 来辅助完成，例如让其 负margin-top + border-bottom，不过如果 <code>ul</code> 或者其父元素有垂直方向 <code>padding</code> 的话，处理起来可能会稍显蛋疼。</p>
+<p>还有其他解？当然，会有的，来看：</p>
+<h3 id="CSS_Case2">CSS Case2</h3><pre><code><span class="id">#demo</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#fff</span></span></span>;
+}</span>
+<span class="id">#demo</span> <span class="tag">li</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"><span class="number">1px</span></span></span>;
+    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#eee</span></span></span>;
+}</span>
+</code></pre><p>是的，选择 <code>margin</code> 作为实现手段。以 <code>ul</code> 的底色配合 <code>margin</code> 模拟出线条的外观，这其实也挺讨人喜欢的，不是么？看具体实现 <code>DEMO4</code>：<a href="http://demo.doyoe.com/css/margin/double-lines.htm" target="_blank" rel="external">双重边线</a></p>
+<p><code>margin</code> 模拟边线还可以做什么？比如做个表格神马的，看看 <code>DEMO5</code>：<a href="http://demo.doyoe.com/css/margin/table.htm" target="_blank" rel="external">margin模拟表格边线</a></p>
+<h2 id="margin系列文章：">margin系列文章：</h2><ul>
+<li><a href="/2013/12/31/css/margin系列之布局篇/">margin系列之布局篇</a></li>
+<li><a href="/2013/12/20/css/margin系列之bug巡演（三）/">margin系列之bug巡演（三）</a></li>
+<li><a href="/2013/12/17/css/margin系列之bug巡演（二）/">margin系列之bug巡演（二）</a></li>
+<li><a href="/2013/12/14/css/margin系列之内秀篇（二）/">margin系列之内秀篇（二）</a></li>
+<li><a href="/2013/12/10/css/margin系列之bug巡演/">margin系列之bug巡演</a></li>
+<li><a href="/2013/12/06/css/margin系列之内秀篇/">margin系列之内秀篇</a></li>
+<li><a href="/2013/12/04/css/margin系列之外边距折叠/">margin系列之外边距折叠</a></li>
+<li><a href="/2013/12/02/css/margin系列之与相对偏移的异同/">margin系列之与相对偏移的异同</a></li>
+<li><a href="/2013/11/30/css/margin系列之百分比/">margin系列之百分比</a></li>
+<li><a href="/2013/11/29/css/margin系列之keyword%20auto/">margin系列之keyword auto</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/12/17/css/margin系列之bug巡演（二）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          margin系列之bug巡演（二）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/10/css/margin系列之bug巡演/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">margin系列之bug巡演</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css/margin系列之内秀篇（二）" data-title="margin系列之内秀篇（二）" data-url="http://blog.doyoe.com/2013/12/14/css/margin系列之内秀篇（二）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"doyoe"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+        &copy; Joy Du（<a href="http://weibo.com/doyoe" target="_blank">@doyoe</a>）
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

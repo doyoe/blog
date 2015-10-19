@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <title>margin系列之bug巡演（三） | CSS探索之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IE8按钮margin auto居中失效Bug你会猛然觉得，这是正解啊，因为 button 或者 input type button类型 的元素是 inline-level 的。
+不对啊，button 应该是 inline 的吧？哦，可能是 inline-block ？
+在这之前，我们似乎要先明确一些基础知识。
+什么是 inline-level 元素？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之bug巡演（三）">
+<meta property="og:url" content="http://blog.doyoe.com/2013/12/20/css/margin系列之bug巡演（三）/index.html">
+<meta property="og:site_name" content="CSS探索之旅">
+<meta property="og:description" content="IE8按钮margin auto居中失效Bug你会猛然觉得，这是正解啊，因为 button 或者 input type button类型 的元素是 inline-level 的。
+不对啊，button 应该是 inline 的吧？哦，可能是 inline-block ？
+在这之前，我们似乎要先明确一些基础知识。
+什么是 inline-level 元素？">
+<meta property="og:updated_time" content="2015-04-20T13:30:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="margin系列之bug巡演（三）">
+<meta name="twitter:description" content="IE8按钮margin auto居中失效Bug你会猛然觉得，这是正解啊，因为 button 或者 input type button类型 的元素是 inline-level 的。
+不对啊，button 应该是 inline 的吧？哦，可能是 inline-block ？
+在这之前，我们似乎要先明确一些基础知识。
+什么是 inline-level 元素？">
+  
+    <link rel="alternative" href="/atom.xml" title="CSS探索之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <!--<div class="overlay"></div>-->
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/mobile/">移动开发</a></li>
+				        
+							<li><a href="/categories/CSS/">CSS</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/FE/" style="font-size: 10px;">FE</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Qunar/" style="font-size: 10px;">Qunar</a> <a href="/tags/margin/" style="font-size: 17.5px;">margin</a> <a href="/tags/margin-bug/" style="font-size: 15px;">margin bug</a> <a href="/tags/margin-layout/" style="font-size: 10px;">margin layout</a> <a href="/tags/margin偏移/" style="font-size: 10px;">margin偏移</a> <a href="/tags/margin应用/" style="font-size: 12.5px;">margin应用</a> <a href="/tags/margin折叠/" style="font-size: 10px;">margin折叠</a> <a href="/tags/margin百分比/" style="font-size: 10px;">margin百分比</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/w3c/" style="font-size: 20px;">w3c</a> <a href="/tags/z-index/" style="font-size: 10px;">z-index</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/包含块/" style="font-size: 10px;">包含块</a> <a href="/tags/博客介绍/" style="font-size: 10px;">博客介绍</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/层叠上下文/" style="font-size: 10px;">层叠上下文</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/置换元素/" style="font-size: 10px;">置换元素</a> <a href="/tags/自我介绍/" style="font-size: 10px;">自我介绍</a> <a href="/tags/视觉格式化模型/" style="font-size: 12.5px;">视觉格式化模型</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非置换元素/" style="font-size: 10px;">非置换元素</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://css.doyoe.com/">CSS参考手册</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://demo.doyoe.com/">Web前端实验室</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我在帝都，在Qunar，你可以在 Github 或者 Weibo 找到我。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/mobile/">移动开发</a></li>
+		        
+					<li><a href="/categories/CSS/">CSS</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-css/margin系列之bug巡演（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/12/20/css/margin系列之bug巡演（三）/" class="article-date">
+  	<time datetime="2013-12-20T03:15:00.000Z" itemprop="datePublished">Dec 20 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin/">margin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin-bug/">margin bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3c/">w3c</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      margin系列之bug巡演（三）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IE8按钮margin_auto居中失效Bug">IE8按钮margin auto居中失效Bug</h2><p>你会猛然觉得，这是正解啊，因为 <code>button</code> 或者 <code>input type button类型</code> 的元素是 <code>inline-level</code> 的。</p>
+<p>不对啊，<code>button</code> 应该是 <code>inline</code> 的吧？哦，可能是 <code>inline-block</code> ？</p>
+<p>在这之前，我们似乎要先明确一些基础知识。</p>
+<h2 id="什么是_inline-level_元素？">什么是 inline-level 元素？</h2><a id="more"></a>
+<p>要知道 <code>inline-level</code> 元素并不等于 <code>inline</code> 元素，也就是说 <code>行内级元素</code> 与 <code>行内元素</code> 是两个不同的概念。</p>
+<h3 id="inline-level_元素包含_display_值为："><code>inline-level</code> 元素包含 <code>display</code> 值为：</h3><ul>
+<li>inline</li>
+<li>inline-block</li>
+<li>inline-table</li>
+<li>inline-flex</li>
+<li>other inline-*</li>
+</ul>
+<p>以上情况时，元素可被称之为 <code>inline-level</code> 元素，但不都是 <code>inline</code> 元素。</p>
+<h2 id="什么是_block-level_元素？">什么是 block-level 元素？</h2><p><code>block-level</code> 指的是 <code>display</code> 值为 <code>block</code> 的元素吗？我知道不少人一直有这样的认知，不过这不完全准确。</p>
+<h3 id="block-level_元素包含_display_值为："><code>block-level</code> 元素包含 <code>display</code> 值为：</h3><ul>
+<li>block</li>
+<li>list-item</li>
+<li>table</li>
+<li>table-*</li>
+<li>flex</li>
+<li>如果position既不是static也不是relative、float不是none或者元素是根元素，当display:inline-table时，display的计算值为table；当display值为 inline | inline-block | run-in | table-* 时，display的计算值为block</li>
+</ul>
+<p>有如上情况时的元素均被称之为 <code>block-level</code> 元素。同时 <code>block-level</code> 和 <code>block</code> 也不是同一个概念，所以如果你认为 <code>display</code> 值为 <code>list-item</code> 的 li 不是 块级元素，那就错了。</p>
+<p>看到这里，你对 <code>块级元素</code>，<code>块元素</code>，<code>行内级元素</code>，<code>行内元素</code> 这个4个概念，应该已经有了比较清晰的了解？</p>
+<h2 id="margin_keyword_auto只能应用在常规流中的_block-level_元素上">margin keyword auto只能应用在常规流中的 block-level 元素上</h2><ul>
+<li>当一个块级元素定义了 <code>position</code> 值为非 <code>static</code> 和 <code>relative</code> 之外的值时，margin-right/left auto 的计算值为0；</li>
+<li>当一个块级元素定义了 <code>float</code> 值为非 <code>none</code> 之外的值时，margin-right/left auto 的计算值为0；</li>
+<li>非块级元素的margin-right/left auto 的计算值为0；</li>
+</ul>
+<p>计算值为0，即说明其应用使用值的意图失败。所以在有如上情形的场景中，都无法使用 <code>auto</code> 来实现水平居中。同时也说明了，只有 <code>normal flow</code> 的 <code>block-level</code> 才能应用 margin keyword auto。</p>
+<h2 id="margin可以应用于所有元素吗？">margin可以应用于所有元素吗？</h2><p>这显然不行。准确的说：margin可以应用在除某些table-*元素和某些行内元素之外的所有元素上。</p>
+<h3 id="和margin亲近的table-*系元素">和margin亲近的table-*系元素</h3><ul>
+<li>table</li>
+<li>inline-table</li>
+<li>table-caption</li>
+</ul>
+<p>除了 <code>display</code> 值为以上3种之外的 <code>table系</code> 元素，都不能应用 <code>margin</code> ，比如：th, td。</p>
+<h3 id="和margin亲近的_inline-level_元素">和margin亲近的 inline-level 元素</h3><p>我之前面试的时候常会问候选人，行内元素不能设置宽高对吗？大部分人会告诉我说是；然后我又会问，那为什么 <code>img</code> 元素可以设置宽高呢？有人会告诉我，因为 <code>img</code> 是个特殊的元素？接着我又会问题，<code>img</code> 是如何特殊的？然后，然后就没然后了，因为没声音了。</p>
+<p>恩，<code>img</code> 确实是个特殊的元素。它特殊在哪里？它的特殊就在于它是一个行内置换元素。</p>
+<p>所有的置换元素都可以设置 <code>margin</code> 属性，并且可以设置宽高，这就是为什么 <code>img</code> 是行内元素却可以设置 <code>width</code> 和 <code>height</code>。</p>
+<h3 id="什么是置换元素（Replaced_elements）？">什么是置换元素（Replaced elements）？</h3><p>一个元素拥有内在的二维属性，其宽高属性受外部资源影响，默认拥有CSS格式，这样的元素被称为置换元素。</p>
+<p>意思就是说置换元素的宽高不完全由CSS决定，还受其自身内容和外部资源所影响。</p>
+<p>举个例子来说，仍然说 <code>img</code> 元素吧，你会发现，如果你 <code>src</code> 进来不同尺寸的资源，那么在 viewport 上显示的图片宽高也是不同的，也就是说 <code>img</code> 元素的宽高会受外部资源影响。</p>
+<p>再说说 <code>input</code> 元素，随便在页面上扔一个input，你都能发现它拥有一个默认的宽高，这就是它所具有的内在二维宽高属性，并且该类元素会受UA影响，不同UA下所呈现外观会有不同。</p>
+<h3 id="常见的置换元素有哪些？">常见的置换元素有哪些？</h3><p>img, object, button, input, textarea, select等</p>
+<h3 id="行内非置换元素真的不能应用margin吗？">行内非置换元素真的不能应用margin吗？</h3><p>什么是非置换元素？除了置换元素之外的元素，我想将这样的元素称之为非置换元素是没有大碍的。</p>
+<p>那么行内非置换元素真的无法设置 <code>margin</code> 吗？我想在工作中你一定碰到过很多这样的场景，给一个 <code>a</code> 或者 <code>span</code> 定义间隙。这时我们写：</p>
+<h3 id="CSS">CSS</h3><pre><code><span class="tag">span</span><span class="rules">{<span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">5px</span> <span class="number">10px</span></span></span>;}</span>
+</code></pre><p>结果发现 <code>span</code> 的水平方向上的 <code>margin</code> 定义生效了，但垂直方向上的 <code>margin</code> 定义却没被应用。</p>
+<p>是的，这就是行内非置换元素使用 <code>margin</code> 时的表征，所以对各种特性的理解，在让自己的代码更有效上是大有裨益的。</p>
+<h2 id="回归正题">回归正题</h2><p>我们本来是想说IE8按钮margin auto居中失效Bug的，扯了不少题外话。</p>
+<p>我们知道 margin keyword auto 不能应用在处于常规流中的 block-level 之外的元素上，所以我有这样的一段代码：</p>
+<h3 id="CSS-1">CSS</h3><pre><code><span class="tag">button</span><span class="rules">{<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;<span class="rule"><span class="attribute">margin</span>:<span class="value">auto</span></span>;}</span>
+</code></pre><h3 id="HTML">HTML</h3><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>恩，我们将 <code>button</code> 显式的转换为了 <code>block</code>，同时我们知道 <code>button</code> 作为置换元素，本身具备内在宽高，也就是说这时，我只需要加上 <code>margin:auto</code> ，该按钮就应该在其包含块里水平居中。</p>
+<p>是的，所有浏览器都和预期是一样，实现了水平居中，但是却出现了奇葩的IE8，完全无效，甚至不如原始社会的IE6。来看看示例 <code>DEMO1</code>：<a href="http://demo.doyoe.com/css/margin/bug/button-auto-margin-bug.html" target="_blank" rel="external">IE8按钮margin auto居中失效Bug</a></p>
+<p>通过以上例子，你有没有突然感觉到，如果要让一个置换元素在包含块中水平居中，出乎预料的简单，只需要 <code>display:block;margin:auto;</code> 即可。</p>
+<h2 id="注意事项">注意事项</h2><p>令人意外的是，只有 <code>button</code> 和 input type 为 button 相关元素的时候，在IE8中才会水平居中失效；如: <code>input type text</code> 或 <code>img</code> 时，margin keyword auto 运作正常。</p>
+<h2 id="解决方案">解决方案</h2><ul>
+<li>给其显示的定义宽度</li>
+<li>不改变其display值，包含块text-align:center</li>
+<li>其它水平居中方案，如：absolute + 负margin</li>
+</ul>
+<h2 id="margin系列文章：">margin系列文章：</h2><ul>
+<li><a href="/2013/12/31/css/margin系列之布局篇/">margin系列之布局篇</a></li>
+<li><a href="/2013/12/20/css/margin系列之bug巡演（三）/">margin系列之bug巡演（三）</a></li>
+<li><a href="/2013/12/17/css/margin系列之bug巡演（二）/">margin系列之bug巡演（二）</a></li>
+<li><a href="/2013/12/14/css/margin系列之内秀篇（二）/">margin系列之内秀篇（二）</a></li>
+<li><a href="/2013/12/10/css/margin系列之bug巡演/">margin系列之bug巡演</a></li>
+<li><a href="/2013/12/06/css/margin系列之内秀篇/">margin系列之内秀篇</a></li>
+<li><a href="/2013/12/04/css/margin系列之外边距折叠/">margin系列之外边距折叠</a></li>
+<li><a href="/2013/12/02/css/margin系列之与相对偏移的异同/">margin系列之与相对偏移的异同</a></li>
+<li><a href="/2013/11/30/css/margin系列之百分比/">margin系列之百分比</a></li>
+<li><a href="/2013/11/29/css/margin系列之keyword%20auto/">margin系列之keyword auto</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/12/31/css/margin系列之布局篇/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          margin系列之布局篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/17/css/margin系列之bug巡演（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">margin系列之bug巡演（二）</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css/margin系列之bug巡演（三）" data-title="margin系列之bug巡演（三）" data-url="http://blog.doyoe.com/2013/12/20/css/margin系列之bug巡演（三）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"doyoe"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+        &copy; Joy Du（<a href="http://weibo.com/doyoe" target="_blank">@doyoe</a>）
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <title>margin系列之布局篇 | CSS探索之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端工程师对CSS的基本诉求布局能力或许是Web前端工程师对CSS的最基本的诉求，当开始进入到这个岗位，就避免不了要和CSS打交道，而和CSS交往，布局当然是不可或缺的。
+很遗憾的是，CSS2.1之前都没有出现真正意义上的布局属性，直至现如今的CSS3，才开始出现了一些，如：flex, grid 等，不过其兼容性及国内浏览器的使用情况，真令人捉急。
+不过，有需求就会有变通，对于达成布局目的，已衍生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之布局篇">
+<meta property="og:url" content="http://blog.doyoe.com/2013/12/31/css/margin系列之布局篇/index.html">
+<meta property="og:site_name" content="CSS探索之旅">
+<meta property="og:description" content="前端工程师对CSS的基本诉求布局能力或许是Web前端工程师对CSS的最基本的诉求，当开始进入到这个岗位，就避免不了要和CSS打交道，而和CSS交往，布局当然是不可或缺的。
+很遗憾的是，CSS2.1之前都没有出现真正意义上的布局属性，直至现如今的CSS3，才开始出现了一些，如：flex, grid 等，不过其兼容性及国内浏览器的使用情况，真令人捉急。
+不过，有需求就会有变通，对于达成布局目的，已衍生">
+<meta property="og:image" content="http://demo.doyoe.com/css/margin/images/layout-1.png">
+<meta property="og:image" content="http://demo.doyoe.com/css/margin/images/layout-2.png">
+<meta property="og:updated_time" content="2015-04-20T13:30:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="margin系列之布局篇">
+<meta name="twitter:description" content="前端工程师对CSS的基本诉求布局能力或许是Web前端工程师对CSS的最基本的诉求，当开始进入到这个岗位，就避免不了要和CSS打交道，而和CSS交往，布局当然是不可或缺的。
+很遗憾的是，CSS2.1之前都没有出现真正意义上的布局属性，直至现如今的CSS3，才开始出现了一些，如：flex, grid 等，不过其兼容性及国内浏览器的使用情况，真令人捉急。
+不过，有需求就会有变通，对于达成布局目的，已衍生">
+  
+    <link rel="alternative" href="/atom.xml" title="CSS探索之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <!--<div class="overlay"></div>-->
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/mobile/">移动开发</a></li>
+				        
+							<li><a href="/categories/CSS/">CSS</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/FE/" style="font-size: 10px;">FE</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Qunar/" style="font-size: 10px;">Qunar</a> <a href="/tags/margin/" style="font-size: 17.5px;">margin</a> <a href="/tags/margin-bug/" style="font-size: 15px;">margin bug</a> <a href="/tags/margin-layout/" style="font-size: 10px;">margin layout</a> <a href="/tags/margin偏移/" style="font-size: 10px;">margin偏移</a> <a href="/tags/margin应用/" style="font-size: 12.5px;">margin应用</a> <a href="/tags/margin折叠/" style="font-size: 10px;">margin折叠</a> <a href="/tags/margin百分比/" style="font-size: 10px;">margin百分比</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/w3c/" style="font-size: 20px;">w3c</a> <a href="/tags/z-index/" style="font-size: 10px;">z-index</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/包含块/" style="font-size: 10px;">包含块</a> <a href="/tags/博客介绍/" style="font-size: 10px;">博客介绍</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/层叠上下文/" style="font-size: 10px;">层叠上下文</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a> <a href="/tags/置换元素/" style="font-size: 10px;">置换元素</a> <a href="/tags/自我介绍/" style="font-size: 10px;">自我介绍</a> <a href="/tags/视觉格式化模型/" style="font-size: 12.5px;">视觉格式化模型</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/非置换元素/" style="font-size: 10px;">非置换元素</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://css.doyoe.com/">CSS参考手册</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://demo.doyoe.com/">Web前端实验室</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我在帝都，在Qunar，你可以在 Github 或者 Weibo 找到我。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars3.githubusercontent.com/u/1207956?v=3&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-title"><a href="/">CSS探索之旅</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/mobile/">移动开发</a></li>
+		        
+					<li><a href="/categories/CSS/">CSS</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/doyoe/doyoe.github.io" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/doyoe" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-css/margin系列之布局篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/12/31/css/margin系列之布局篇/" class="article-date">
+  	<time datetime="2013-12-31T03:15:00.000Z" itemprop="datePublished">Dec 31 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin/">margin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/margin-layout/">margin layout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3c/">w3c</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      margin系列之布局篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前端工程师对CSS的基本诉求">前端工程师对CSS的基本诉求</h2><p>布局能力或许是Web前端工程师对CSS的最基本的诉求，当开始进入到这个岗位，就避免不了要和CSS打交道，而和CSS交往，布局当然是不可或缺的。</p>
+<p>很遗憾的是，CSS2.1之前都没有出现真正意义上的布局属性，直至现如今的CSS3，才开始出现了一些，如：flex, grid 等，不过其兼容性及国内浏览器的使用情况，真令人捉急。</p>
+<p>不过，有需求就会有变通，对于达成布局目的，已衍生出各式各样的方法，如：float, inline-block, table, absolute 等等。</p>
+<a id="more"></a>
+<h2 id="margin的布局之道">margin的布局之道</h2><p>其实，这个话题有点脱离 <code>margin</code> 的能力范围，因为单纯的 <code>margin</code> 并无法完成复杂布局，它更多做的是辅助，但却又难以替代。</p>
+<h2 id="经典左右结构">经典左右结构</h2><p>两栏结构应该是最常见和经典的网页呈现之一吧？如下 <code>图一</code>：</p>
+<p><img src="http://demo.doyoe.com/css/margin/images/layout-1.png" alt="classsic layout">（图一）</p>
+<p>相信对于这样一个网页呈现，你不会陌生。那么你有多少种方案可以达成该布局？我想，4至5种应该是保守估计吧？</p>
+<p>这次，我们只看 <code>margin</code> 是如何做的。</p>
+<h2 id="absolute_+_margin_方式">absolute + margin 方式</h2><h3 id="HTML">HTML</h3><pre><code><span class="tag">&lt;<span class="title">header</span> <span class="attribute">id</span>=<span class="value">"hd"</span>&gt;</span>头部<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"bd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">aside</span> <span class="attribute">id</span>=<span class="value">"aside"</span>&gt;</span>侧边栏固定宽度<span class="tag">&lt;/<span class="title">aside</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>主内容栏自适应宽度<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span> <span class="attribute">id</span>=<span class="value">"ft"</span>&gt;</span>底部<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</code></pre><h3 id="CSS">CSS</h3><pre><code><span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+</code></pre><p>如上关键代码，我们即可实现 <code>图一</code> 布局，该布局有一个特点就是，<code>#main</code> 可以自适应可用空间。</p>
+<p>假定 <code>HTML</code> 是给定的，我们来解读一下 <code>CSS</code> 代码：</p>
+<p>我们知道块级元素的特性之一是换新行，也就是说，如果想让 <code>#main</code> 和 <code>#aside</code> 在同行显示，我们要么改变其显示属性为 <code>inline-level</code>（即之前说的inline-block布局方式），要么改变其流方式（absolute, float, flex and etc…）。</p>
+<p>如上述代码，我们使用了 <code>absolute</code>，即让 ‘#aside’ 脱离常规流，通过绝对定位到想要的位置。</p>
+<h3 id="主内容栏自适应宽度">主内容栏自适应宽度</h3><p>同时你会发现，我们并有改变 <code>#main</code> 的显示属性或者流方式，也就是说其仍然具备块级元素的特性，所以它会自动适应剩余宽度，即我们常说的自适应宽度。</p>
+<p>我们并不希望 <code>#main</code> 区域会包含 <code>#aside</code> 在内，于是利用 <code>margin</code> 给 ‘#aside’ 预留出足够其显示的空间，即可达成我们所要的布局。</p>
+<p>可能你会问为什么是 <code>margin-left:210px</code> 而不是 <code>200px</code>，实际确实应该是 <code>200px</code>，多出来的 <code>10px</code> 只是为了创建一个列间隙，与布局实现无关。</p>
+<p>来看看具体的实现 <code>DEMO1</code>: <a href="http://demo.doyoe.com/css/margin/layout/absolute-margin.html" target="_blank" rel="external">margin+absolute布局：左栏固定主内容自适应</a></p>
+<p>就这样，是不是很简单？其实它还有亮点，那就是：</p>
+<h3 id="任意调整列顺序">任意调整列顺序</h3><p>在不修改 <code>HTML</code> 的情况下，只需简单的修改 <code>CSS</code>，我们即可让左右两栏的顺序调换，来看代码：</p>
+<h3 id="CSS-1">CSS</h3><pre><code><span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">right</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+</code></pre><p>其实现原理没变，同样看看  <code>DEMO2</code>: <a href="http://demo.doyoe.com/css/margin/layout/absolute-margin-2.html" target="_blank" rel="external">margin+absolute布局：右栏固定主内容自适应</a></p>
+<h3 id="主内容优先显示">主内容优先显示</h3><p>可以更Cool一点，你觉得呢？很多时候，你也许会考虑到，不论在何种情况下，总想保证主要的内容优先于次要的内容呈现给用户，那么，怎么做？</p>
+<p>很简单，只需要将主要内容的HTML排在次要内容的HTML之前即可，因为它是顺序加载渲染的。我们可以这样：</p>
+<h3 id="HTML-1">HTML</h3><pre><code><span class="tag">&lt;<span class="title">header</span> <span class="attribute">id</span>=<span class="value">"hd"</span>&gt;</span>头部<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"bd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>主内容栏自适应宽度<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">aside</span> <span class="attribute">id</span>=<span class="value">"aside"</span>&gt;</span>侧边栏固定宽度<span class="tag">&lt;/<span class="title">aside</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span> <span class="attribute">id</span>=<span class="value">"ft"</span>&gt;</span>底部<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</code></pre><p>是的，我们只需要将 <code>#main</code> 的HTML挪到 <code>#aside</code> 的HTML前面，令人兴奋的是，改变HTML之后，CSS不需要做任何改变。我们来看 <code>DEMO3</code>: <a href="http://demo.doyoe.com/css/margin/layout/absolute-margin-3.html" target="_blank" rel="external">margin+absolute布局：左栏固定主内容自适应，主内容有限显示</a></p>
+<p>当然，调正列顺序的 <code>DEMO4</code>: <a href="http://demo.doyoe.com/css/margin/layout/absolute-margin-4.html" target="_blank" rel="external">margin+absolute布局：右栏固定主内容自适应，主内容有限显示</a> 也同样简单，我们只需要写HTML时注意一下即可。</p>
+<h3 id="致命缺陷">致命缺陷</h3><p>列举了 <code>absolute+margin</code> 布局的很多优点，但只说一个问题，就足以让你在是否选用这种方式时深思熟虑，是什么呢？</p>
+<p>我们知道 <code>absolute</code> 是定位流，脱离正常排版，也就是说绝对定位元素不影响其上下文的排版方式，你意识到我想说什么了么？</p>
+<p>OK，用代码来演示：</p>
+<h3 id="HTML-2">HTML</h3><pre><code><span class="tag">&lt;<span class="title">header</span> <span class="attribute">id</span>=<span class="value">"hd"</span>&gt;</span>头部<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"bd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>主内容栏自适应宽度<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">aside</span> <span class="attribute">id</span>=<span class="value">"aside"</span>&gt;</span>侧边栏固定宽度，我的内容可能比主内容多，高度比主内容栏高<span class="tag">&lt;/<span class="title">aside</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span> <span class="attribute">id</span>=<span class="value">"ft"</span>&gt;</span>底部<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</code></pre><p>看完代码，估计你猜到了。是的，<code>#aside</code> 无法撑开父元素的高度，它将会溢出父元素区域，结果如下图：</p>
+<p><img src="http://demo.doyoe.com/css/margin/images/layout-2.png" alt="classsic layout">（图二）</p>
+<p>来看看这缺陷所导致的情况 <code>DEMO5</code>: <a href="http://demo.doyoe.com/css/margin/layout/absolute-margin-5.html" target="_blank" rel="external">margin+absolute布局的致命缺陷</a></p>
+<p>此时假设你设置父元素 <code>overflow:hidden</code> 那么溢出部分将会被裁减，同样不符合布局意图，无法可破。所以在内容量不可控的场景，不推荐使用这种方式。</p>
+<h2 id="float_+_margin_方式">float + margin 方式</h2><p>和 <code>absolute + margin</code> 方式一样，<code>float + margin</code> 方式一样是经典的利用来布局的方案，并且被更广泛使用。我们仍然以 <code>图一</code> 为例，来看代码：</p>
+<h3 id="HTML-3">HTML</h3><pre><code><span class="tag">&lt;<span class="title">header</span> <span class="attribute">id</span>=<span class="value">"hd"</span>&gt;</span>头部<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"bd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">aside</span> <span class="attribute">id</span>=<span class="value">"aside"</span>&gt;</span>侧边栏固定宽度<span class="tag">&lt;/<span class="title">aside</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>主内容栏自适应宽度<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span> <span class="attribute">id</span>=<span class="value">"ft"</span>&gt;</span>底部<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</code></pre><h3 id="CSS-2">CSS</h3><pre><code><span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+</code></pre><p>如上述代码，我们使用了 <code>float</code>，即从图文环绕形态演变而来。当 <code>#aside</code> 定义了 <code>float</code>，那么紧随其后的元素将会环绕在其周围。不过环绕并不是我们想要的结果，我们想要的是 ‘#main’ 也自成封闭矩形，所以利用 <code>margin</code> 留出足够 <code>#aside</code> 显示的空间，中断环绕即可。</p>
+<p>当然，此时 <code>#main</code> 也是自适应宽度的，来看具体实例 <code>DEMO6</code>: <a href="http://demo.doyoe.com/css/margin/layout/float-margin.html" target="_blank" rel="external">margin+float布局：左栏固定主内容自适应</a></p>
+<p>它是否也具备可任意调整列顺序的特点？何不一试？</p>
+<h3 id="CSS-3">CSS</h3><pre><code><span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">right</span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+</code></pre><p>看过 <code>DEMO7</code>: <a href="http://demo.doyoe.com/css/margin/layout/float-margin-2.html" target="_blank" rel="external">margin+float布局：右栏固定主内容自适应</a>，你会发现，是的，这种方式也支持任意调整列顺序，很棒。</p>
+<p>从这种趋势看来，貌似 <code>float + margin</code> 的方式会成为黑马，不过遗憾的告诉你，这种方式无法支持主内容优先显示。但我们有更Cool的解决方案。</p>
+<h2 id="float_+_负margin_方式">float + 负margin 方式</h2><p>接下来我要说的大家可能都猜到了，对，经典的圣杯布局。至于圣杯的名字由来，大家可以自行Google，这里不做赘述。</p>
+<p>恩，HTML当然是使用主内容优先显示的那种：</p>
+<h3 id="HTML-4">HTML</h3><pre><code><span class="tag">&lt;<span class="title">header</span> <span class="attribute">id</span>=<span class="value">"hd"</span>&gt;</span>头部<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"bd"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>主内容栏自适应宽度<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">aside</span> <span class="attribute">id</span>=<span class="value">"aside"</span>&gt;</span>侧边栏固定宽度<span class="tag">&lt;/<span class="title">aside</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span> <span class="attribute">id</span>=<span class="value">"ft"</span>&gt;</span>底部<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</code></pre><h3 id="CSS-4">CSS</h3><pre><code><span class="id">#bd</span><span class="rules">{
+    <span class="rule"><span class="attribute">padding-left</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+<span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value">-<span class="number">210px</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+    <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">100%</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;
+}</span>
+</code></pre><p>如上代码，既是圣杯布局的核心Code，如果你看懂了，你会发现，这其实很简单，不是么？</p>
+<p>简单解释一下上面的CSS Code，首先我们是在做一个左侧固定宽度，右侧自适应宽度的布局。我们说过要让块级元素在同行显示的条件：改变显示方式，改变流方式，这里我们选择了使用 <code>float</code> 来将 <code>#main</code> 和 <code>#aside</code> 变成浮动流。</p>
+<p>OK，这时我们具备 <code>#main</code> 和 <code>#aside</code> 能在同行显示的前置条件。我们知道，浮动元素其宽度如果没有显式定义，则由其内容决定。正好，<code>#aside</code> 是定宽的，所以显示给它定义 <code>width:200px</code>，但此时 <code>#main</code> 该怎么办？不设置 <code>width</code> 不对，因为宽度将被内容左右，设置 <code>width:100%</code> 也不对，因为这样的话，就没有 <code>#aside</code> 的立足之地了，正确的应该是 <code>width: calc(100% - 200px)</code>，不是么？可惜，这是新特性，只好作罢。</p>
+<p>变通？是的，有的时候稍微换个思路，你会觉得豁然开朗。</p>
+<p><code>#main</code> 不是要自适应吗？那就给它个 <code>100%</code>，怎么做？我们在包含块 <code>#bd</code> 中就将 <code>#aside</code> 的宽度刨除，宽度全部都给 <code>#main</code>。恩，我们只需要这样 <code>#bd{padding-left:210px;}</code> （10px仍然是用来做间隙的），这时 <code>#main</code> 就可以设置 <code>width:100%</code> 了，由于 <code>#bd</code> 设置了 <code>padding</code>，所以已在左边预留出了一块宽 <code>210px</code> 的区域。此时的问题在于如果将 <code>#aside</code> 挪到这个地方，你想对了，我们是在聊 <code>负margin</code> 布局，自然需要利用上。</p>
+<p><code>#aside{margin-left:-100%;}</code> 这样可以了吗？很明显，这样还不行，此时 <code>#aside</code> 和 <code>#main</code> 的起始位置将会重合，因为 <code>#aside</code> 的 <code>margin-left</code> 计算值是相对包含块来计算的，而此时包含块的宽度等于 <code>#main</code> 的宽度。</p>
+<p>如何让 <code>#aside</code> 再向左偏移 <code>210px</code>？显然 <code>margin</code> 是不行了，因为我们已经用掉它了。如果你看过之前的文章的话，你可能还记得，有一篇文章讲 <a href="http://blog.doyoe.com/~posts/css/2013-12-02-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%8E%E7%9B%B8%E5%AF%B9%E5%81%8F%E7%A7%BB%E7%9A%84%E5%BC%82%E5%90%8C.md">margin系列之与相对偏移的异同</a>。恩，是的，这时我们可以借助相对偏移。</p>
+<p>向左偏移 <code>210px</code> 是件很简单的事：<code>#aside{position:relative;left:-210px;}</code>。</p>
+<p>至此，你的布局OK了，这就是圣杯的实现方式。来看已实现好的示例 <code>DEMO8</code>: <a href="http://demo.doyoe.com/css/margin/layout/holy-grail.html" target="_blank" rel="external">圣杯：左栏固定主内容自适应</a></p>
+<p>当然，圣杯布局必须可以任意调整列顺序，要不，怎么能说是更Cool些的方案呢？</p>
+<h3 id="CSS-5">CSS</h3><pre><code><span class="id">#bd</span><span class="rules">{
+    <span class="rule"><span class="attribute">padding-right</span>:<span class="value"><span class="number">210px</span></span></span>;
+}</span>
+<span class="id">#aside</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;
+    <span class="rule"><span class="attribute">right</span>:<span class="value">-<span class="number">210px</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">200px</span></span></span>;
+    <span class="rule"><span class="attribute">margin-left</span>:<span class="value">-<span class="number">200px</span></span></span>;
+}</span>
+<span class="id">#main</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;
+}</span>
+</code></pre><p>这个就直接看示例好了，不再一一解释代码 <code>DEMO9</code>: <a href="http://demo.doyoe.com/css/margin/layout/holy-grail-2.html" target="_blank" rel="external">圣杯：右栏固定主内容自适应</a></p>
+<p>所以圣杯布局具备前两种方式共同的优点，同时没有他们的不足，但圣杯本身也有一些问题，在IE6/7下报废，不过不用慌，因为它可被修复。</p>
+<p>你想到方法了吗？</p>
+<h2 id="margin系列文章：">margin系列文章：</h2><ul>
+<li><a href="/2013/12/31/css/margin系列之布局篇/">margin系列之布局篇</a></li>
+<li><a href="/2013/12/20/css/margin系列之bug巡演（三）/">margin系列之bug巡演（三）</a></li>
+<li><a href="/2013/12/17/css/margin系列之bug巡演（二）/">margin系列之bug巡演（二）</a></li>
+<li><a href="/2013/12/14/css/margin系列之内秀篇（二）/">margin系列之内秀篇（二）</a></li>
+<li><a href="/2013/12/10/css/margin系列之bug巡演/">margin系列之bug巡演</a></li>
+<li><a href="/2013/12/06/css/margin系列之内秀篇/">margin系列之内秀篇</a></li>
+<li><a href="/2013/12/04/css/margin系列之外边距折叠/">margin系列之外边距折叠</a></li>
+<li><a href="/2013/12/02/css/margin系列之与相对偏移的异同/">margin系列之与相对偏移的异同</a></li>
+<li><a href="/2013/11/30/css/margin系列之百分比/">margin系列之百分比</a></li>
+<li><a href="/2013/11/29/css/margin系列之keyword%20auto/">margin系列之keyword auto</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/01/21/css/你需要了解的z-index世界/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          你需要了解的z-index世界
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/20/css/margin系列之bug巡演（三）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">margin系列之bug巡演（三）</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css/margin系列之布局篇" data-title="margin系列之布局篇" data-url="http://blog.doyoe.com/2013/12/31/css/margin系列之布局篇/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"doyoe"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+        &copy; Joy Du（<a href="http://weibo.com/doyoe" target="_blank">@doyoe</a>）
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
