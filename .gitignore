@@ -1,0 +1,5 @@
+# gulp配置文件
+node_modules
+
+# 生成文件
+public
