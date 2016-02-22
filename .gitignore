@@ -2,4 +2,5 @@
 node_modules
 
 # 生成文件
+.deploy_git
 public

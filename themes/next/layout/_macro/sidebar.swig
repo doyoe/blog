@@ -81,7 +81,7 @@
         <div class="links-of-author motion-element">
             <p class="site-author-name">订阅号</p>
             <p style="padding:20px 75px">
-                <img src="/mobile/blog/wechat.jpg" width="150px" style="border-radius:10px"/>
+                <img src="/images/wechat.jpg" width="150px" style="border-radius:10px"/>
             </p>
         </div>
 

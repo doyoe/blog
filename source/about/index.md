@@ -10,6 +10,6 @@ type: about
 
 ## 我的站点：
 * [飘雨社区](http://www.doyoe.com/)
-* [CSS探索之旅](http://blog.doyoe.com/) [View on GitHub](https://github.com/doyoe/blog)
+* [CSS探索之旅](http://blog.doyoe.com/) [GitHub](https://github.com/doyoe/blog)
 * [Web前端实验室](http://demo.doyoe.com/)
-* [CSS参考手册](http://css.doyoe.com/)
+* [CSS参考手册](http://css.doyoe.com/) [GitHub](https://github.com/doyoe/css-handbook)

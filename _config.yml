@@ -70,12 +70,12 @@ theme: next
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repository: git@github.com:doyoe/doyoe.github.io.git
   branch: master
 
 # Duo Shuo
-duoshuo_shortname:
+duoshuo_shortname: doyoe
 
 # Baidu
 baidusitemap: true
