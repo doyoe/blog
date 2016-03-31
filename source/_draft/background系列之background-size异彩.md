@@ -1,8 +1,8 @@
-title: background系列之你不知道的background-position
-date: 2016-3-28 11:15:00
+title: background系列之background-size异彩
+date: 2016-3-30 11:15:00
 categories: CSS
 author: 杜瑶
-tags: [background, background-position, w3c, CSS应用]
+tags: [background, background-size, w3c, CSS应用]
 ---
 
 ## 这是一个有趣的话题

@@ -1,6 +1,7 @@
 title: margin系列之外边距折叠
 date: 2013-12-04 11:15:00
 categories: CSS
+author: 杜瑶
 tags: [margin, w3c, margin折叠]
 ---
 

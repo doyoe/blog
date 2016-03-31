@@ -93,7 +93,7 @@ version: 0.4.5.1
 social:
   github: https://github.com/doyoe/doyoe.github.io
   weibo: http://weibo.com/doyoe
-  rss: atom.xml
+  rss: /atom.xml
 
 # Rss
 # rss: atom.xml
