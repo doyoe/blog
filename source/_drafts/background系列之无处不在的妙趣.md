@@ -1,8 +1,8 @@
-title: background系列之background-size异彩
-date: 2016-3-30 11:15:00
+title: background系列之无处不在的妙趣
+date: 2016-3-31 11:15:00
 categories: CSS
 author: 杜瑶
-tags: [background, background-size, w3c, CSS应用]
+tags: [background, background-size, gradient, w3c, CSS应用]
 ---
 
 ## 这是一个有趣的话题
