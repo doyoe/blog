@@ -2,7 +2,7 @@ title: background系列之无处不在的妙趣
 date: 2016-4-11 11:15:00
 categories: CSS
 author: 杜瑶
-tags: [background, background-size, gradient, w3c, CSS应用]
+tags: [background, background-origin, gradient, w3c, CSS应用]
 ---
 
 ## 前言
