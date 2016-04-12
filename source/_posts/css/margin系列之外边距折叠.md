@@ -79,7 +79,7 @@ p{
 
 ## 仅此而已？
 
-回想一下我们在 [margin系列之百分比](http://blog.doyoe.com/~posts/css/2013-11-30-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E7%99%BE%E5%88%86%E6%AF%94.md) 文中提到过受书写模式影响的一些特性，非常不幸，`margin` 折叠正好是其中之一。
+回想一下我们在 [margin系列之百分比](http://blog.doyoe.com/2013/11/30/css/margin系列之百分比/) 文中提到过受书写模式影响的一些特性，非常不幸，`margin` 折叠正好是其中之一。
 
 是的，在CSS2及后续的规范中，将`margin` 折叠描述得更为详尽了。
 

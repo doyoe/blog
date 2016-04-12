@@ -7,7 +7,7 @@ tags: [margin, w3c, margin百分比]
 
 ## 你可能从没注意过它
 
-在 [margin系列之keyword auto](http://blog.doyoe.com/~posts/css/2013-11-29-margin%E7%B3%BB%E5%88%97%E4%B9%8Bkeyword%20auto.md) 中，说过了 `margin` 值为 `auto` 的情况，这次要聊的是值为百分比的情形。
+在 [margin系列之keyword auto](http://blog.doyoe.com/2013/11/29/css/margin系列之keyword auto/) 中，说过了 `margin` 值为 `auto` 的情况，这次要聊的是值为百分比的情形。
 
 我必须承认这是一个非常基础的知识点，但有一段时间我发现很多人对此有错误的认知。偶尔在面试或者分享的时候，我会问到这个问题，有人会脱口而出的告诉我他对此的感性理解。
 

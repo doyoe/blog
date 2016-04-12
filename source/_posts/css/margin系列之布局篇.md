@@ -222,7 +222,7 @@ OK，这时我们具备 `#main` 和 `#aside` 能在同行显示的前置条件�
 
 `#aside{margin-left:-100%;}` 这样可以了吗？很明显，这样还不行，此时 `#aside` 和 `#main` 的起始位置将会重合，因为 `#aside` 的 `margin-left` 计算值是相对包含块来计算的，而此时包含块的宽度等于 `#main` 的宽度。
 
-如何让 `#aside` 再向左偏移 `210px`？显然 `margin` 是不行了，因为我们已经用掉它了。如果你看过之前的文章的话，你可能还记得，有一篇文章讲 [margin系列之与相对偏移的异同](http://blog.doyoe.com/~posts/css/2013-12-02-margin%E7%B3%BB%E5%88%97%E4%B9%8B%E4%B8%8E%E7%9B%B8%E5%AF%B9%E5%81%8F%E7%A7%BB%E7%9A%84%E5%BC%82%E5%90%8C.md)。恩，是的，这时我们可以借助相对偏移。
+如何让 `#aside` 再向左偏移 `210px`？显然 `margin` 是不行了，因为我们已经用掉它了。如果你看过之前的文章的话，你可能还记得，有一篇文章讲 [margin系列之与相对偏移的异同](http://blog.doyoe.com/2013/12/02/css/margin系列之与相对偏移的异同/)。恩，是的，这时我们可以借助相对偏移。
 
 向左偏移 `210px` 是件很简单的事：`#aside{position:relative;left:-210px;}`。
 
