@@ -39,7 +39,7 @@ tags: [background, background-origin, gradient, w3c, CSS应用]
 ```html
 <ul class="demo">
     <li>Lady gaga</li>
-    <li class="on">Mariah Carey</li>
+    <li>Mariah Carey</li>
     <li>Adele</li>
     <li>Avril Lavigne</li>
     <li>Sarah Brightman</li>
@@ -91,7 +91,7 @@ Cool，简直太简单了。然后我们又接着来实现第2点：
 
 ## 再出发
 
-虽然说`方案1`有问题，但我们也知道了，如果是使用`margin`来做的间隙，那么将无法填充背景，而`padding`是可以的，那么这久可以作为下个方案的指导。
+虽然说`方案1`有问题，但我们也知道了，如果是使用`margin`来做的间隙，那么将无法填充背景，而`padding`是可以的，那么这就可以作为下个方案的指导。
 
 有了这样的指导，我们是不是可以考虑将内容的间隙和边线的间隙分开处理？内容仍然使用`padding`，边线额外处理，互不影响，避免出现`方案1`的情况。
 
