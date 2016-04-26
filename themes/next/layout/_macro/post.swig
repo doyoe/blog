@@ -133,11 +133,18 @@
     </div>
 
     <footer class="post-footer">
+
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
             <a href="{{ url_for(tag.path) }}" rel="tag">#{{ tag.name }}</a>
           {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if post.edit %}
+        <div class="last-edit-time" style="padding-top:20px;color:#999;">
+          本文最后更新时间：{{ date(post.edit, config.date_format) }}
         </div>
       {% endif %}
 
