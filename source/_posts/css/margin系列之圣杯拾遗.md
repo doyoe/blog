@@ -35,75 +35,77 @@ tags: [margin, w3c, margin layout, 圣杯布局, holy grail]
 
 ![图0：classsic layout](http://demo.doyoe.com/css/margin/images/layout-1.png)
 
-相信对于这样一个网页呈现，你不会陌生。那么你有多少种方案可以达成该布局？我想，4至5种应该是保守估计吧？
-
-恩，HTML当然是使用主内容优先显示的那种：
+下面是我们在上篇文章中写的圣杯布局核心代码（当然，这个 `#demo` 容器你也可以利用 `body` 来取代）：
 
 ### HTML
-
+```html
+<div id="demo">
     <header id="hd">头部</header>
     <div id="bd">
         <div id="main">主内容栏自适应宽度</div>
         <aside id="aside">侧边栏固定宽度</aside>
     </div>
     <footer id="ft">底部</footer>
+</div>
+```
 
 ### CSS
+```css
+#demo {
+    width: 80%;
+}
+#bd {
+    padding-left: 210px;
+}
+#main {
+    float: left;
+    width: 100%;
+}
+#aside {
+    _display: inline;
+    float: left;
+    position: relative;
+    left: -210px;
+    width: 200px;
+    margin-left: -100%;
+}
+```
 
-    #bd{
-        padding-left:210px;
-    }
-    #aside{
-        float:left;
-        position:relative;
-        left:-210px;
-        width:200px;
-        margin-left:-100%;
-    }
-    #main{
-        float:left;
-        width:100%;
-    }
+大家可以使用各种浏览器来测试一下这个示例 [圣杯：左栏固定主内容自适应](http://demo.doyoe.com/css/margin/layout/holy-grail.html)
 
-如上代码，既是圣杯布局的核心Code，如果你看懂了，你会发现，这其实很简单，不是么？
+一般情况下，你会发现除了`IE6`外，其它的浏览器看起来都算正常，然后问题的范围可能并不仅限于这些，大部分问题没被看出只不过是因为没到达边界。
 
-简单解释一下上面的CSS Code，首先我们是在做一个左侧固定宽度，右侧自适应宽度的布局。我们说过要让块级元素在同行显示的条件：改变显示方式，改变流方式，这里我们选择了使用 `float` 来将 `#main` 和 `#aside` 变成浮动流。
+问题列表：
 
-OK，这时我们具备 `#main` 和 `#aside` 能在同行显示的前置条件。我们知道，浮动元素其宽度如果没有显式定义，则由其内容决定。正好，`#aside` 是定宽的，所以显示给它定义 `width:200px`，但此时 `#main` 该怎么办？不设置 `width` 不对，因为宽度将被内容左右，设置 `width:100%` 也不对，因为这样的话，就没有 `#aside` 的立足之地了，正确的应该是 `width: calc(100% - 200px)`，不是么？可惜，这是新特性，只好作罢。
+* `IE6` 布局错乱，侧边栏位置不对；
+* `IE7` resize窗口时，侧边栏会跳动；
+* `IE7及其它浏览器`，当窗口缩小到主内容栏的宽度小于侧边栏的宽度时，布局错乱；
 
-变通？是的，有的时候稍微换个思路，你会觉得豁然开朗。
+对于第3点，我们看看上述的代码实现，还是能非常轻松的理解的。因为侧边栏定义了 `margin-left: -100%`，在这个场景中，`100%` 其实就等同于主内容栏的宽度。如果主内容栏的宽度小于侧边栏，那么侧边栏偏移了一个比自己小的宽度，自然是放不下自己的。
 
-`#main` 不是要自适应吗？那就给它个 `100%`，怎么做？我们在包含块 `#bd` 中就将 `#aside` 的宽度刨除，宽度全部都给 `#main`。恩，我们只需要这样 `#bd{padding-left:210px;}` （10px仍然是用来做间隙的），这时 `#main` 就可以设置 `width:100%` 了，由于 `#bd` 设置了 `padding`，所以已在左边预留出了一块宽 `210px` 的区域。此时的问题在于如果将 `#aside` 挪到这个地方，你想对了，我们是在聊 `负margin` 布局，自然需要利用上。
+对于第1点，这个就有点意思了，基本上这又算是IE6的一个Bug，描述一下这个Bug的现象：
 
-`#aside{margin-left:-100%;}` 这样可以了吗？很明显，这样还不行，此时 `#aside` 和 `#main` 的起始位置将会重合，因为 `#aside` 的 `margin-left` 计算值是相对包含块来计算的，而此时包含块的宽度等于 `#main` 的宽度。
+在IE6中，假定是处于默认的书写模式下，当一个浮动的元素定义了margin的值是一个百分比，那么此时，浮动元素的margin百分比参照最近的清除了浮动的包含块的父元素的宽度进行计算，或者参照body。（然而标准描述只是参考包含块的宽度进行计算，详情请参阅我之前的文章 [margin系列之百分比](/2013/11/30/css/margin系列之百分比/)）
 
-如何让 `#aside` 再向左偏移 `210px`？显然 `margin` 是不行了，因为我们已经用掉它了。如果你看过之前的文章的话，你可能还记得，有一篇文章讲 [margin系列之与相对偏移的异同](http://blog.doyoe.com/2013/12/02/css/margin系列之与相对偏移的异同/)。恩，是的，这时我们可以借助相对偏移。
+我会用一段伪代码来详述这个事，代码如下：
 
-向左偏移 `210px` 是件很简单的事：`#aside{position:relative;left:-210px;}`。
+```html
+body > c > b > a
+```
 
-至此，你的布局OK了，这就是圣杯的实现方式。来看已实现好的示例 `DEMO8`: [圣杯：左栏固定主内容自适应](http://demo.doyoe.com/css/margin/layout/holy-grail.html)
+假设上述代码中的 `a` 就是我们说的浮动元素，正常情况下 `a` 设置了一个百分比的margin，百分比是要参考 `b` 的宽度进行计算的。
 
-当然，圣杯布局必须可以任意调整列顺序，要不，怎么能说是更Cool些的方案呢？
+然后 `IE6` 并没有实现这个规则，它的特征是：
 
-### CSS
+* 浮动元素 `a` 定义了百分比的margin，假设它的祖先元素 `b` 和 `c` 都没有清除浮动，那么就会参照 `body` 的宽度进行百分比换算；
+* 假设 `b` 清除了浮动，那么就会参照 `c` 的宽度进行百分比换算；
 
-    #bd{
-        padding-right:210px;
-    }
-    #aside{
-        float:left;
-        position:relative;
-        right:-210px;
-        width:200px;
-        margin-left:-200px;
-    }
-    #main{
-        float:left;
-        width:100%;
-    }
+对于这个Bug，我写了一个示例，大家可以对照着描述来看这个例子：[浮动margin百分比在ie6上的Bug](http://demo.doyoe.com/css/margin/layout/margin-percentage-bug-on-ie6.html)
 
-这个就直接看示例好了，不再一一解释代码 `DEMO9`: [圣杯：右栏固定主内容自适应](http://demo.doyoe.com/css/margin/layout/holy-grail-2.html)
+好了，知道了在 `IE6` 中有这个Bug之后，关于问题列表中的第1点，我们就也能够理解了，因为 `position: relative; left: -210px;` 这个定义对于 `IE6` 来讲，其实是多余的。
 
-所以圣杯布局具备前两种方式共同的优点，同时没有他们的不足，但圣杯本身也有一些问题，在IE6/7下报废，不过不用慌，因为它可被修复。
+对于第2点，应该是在resize过程中，不断的重绘造成的，它需要不断的去计算这个百分比的使用值。
 
-你想到方法了吗？
+## 杀死它们
+
+所以如果想使得圣杯布局变得更靠谱一些，我们要么就是见招拆招，修复这个问题（比如说为 `IE6` 重置掉 `position: relative; left: -210px;` 定义），要么就避免遇上这些问题，我更喜欢第二种的方式。
